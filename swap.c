@@ -6,11 +6,12 @@
 /*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 13:46:32 by bcaresme          #+#    #+#             */
-/*   Updated: 2026/11/12 14:48:28 by bcaresme         ###   ########.fr       */
+/*   Updated: 2026/11/12 15:09:21 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 void	s(t_stack *stack)
 {
 	int	tmp;
