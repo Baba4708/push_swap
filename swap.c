@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/12 14:08:44 by bcaresme          #+#    #+#             */
-/*   Updated: 2026/11/12 14:21:01 by bcaresme         ###   ########.fr       */
+/*   Created: 2026/11/12 13:46:32 by bcaresme          #+#    #+#             */
+/*   Updated: 2026/11/12 14:48:28 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
-
-void	pa(t_stack *a, t_stack *b)
+#include "push_swap.h"
+void	s(t_stack *stack)
 {
-	if (a->size < 1)
+	int	tmp;
+
+	if (stack->size < 2)
 		return ;
-	b->size += 1;
-	b->array[b->size - 1] = a->array[a->size - 1];
-	a->size -= 1;
+	tmp = stack->array[stack->size - 1];
+	stack->array[stack->size - 1] = stack->array[stack->size - 2];
+	stack->array[stack->size - 2] = tmp;
 }
 
-void	pb(t_stack *a, t_stack *b)
+void	ss(t_stack *a, t_stack *b)
 {
-	if (b->size < 1)
-		return ;
-	a->size += 1;
-	a->array[a->size - 1] = b->array[b->size - 1];
-	b->size -= 1;
+	s(a);
+	s(b);
 }
