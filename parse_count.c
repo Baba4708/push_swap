@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   parse_count.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbouvet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 15:27:54 by kbouvet           #+#    #+#             */
-/*   Updated: 2026/11/12 15:27:57 by kbouvet          ###   ########.fr       */
+/*   Updated: 2026/11/13 11:12:44 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	count_word(char *arg)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -32,7 +33,7 @@ static int	count_word(char *arg)
 
 int	count_values(int argc, char **argv, int *count, t_config *config)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	*count = 0;

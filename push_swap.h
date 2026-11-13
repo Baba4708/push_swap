@@ -6,7 +6,7 @@
 /*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 13:24:04 by bcaresme          #+#    #+#             */
-/*   Updated: 2026/11/12 14:05:20 by bcaresme         ###   ########.fr       */
+/*   Updated: 2026/11/13 12:01:13 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "libft/ft_printf.h"
 
 typedef struct s_stack
 {
@@ -41,9 +42,16 @@ int		is_option(char *arg);
 int		set_option(char *arg, t_config *config);
 void	free_stacks(t_stack *a, t_stack *b);
 void	write_error(void);
+void	s(t_stack *stack);
+void	ss(t_stack *a, t_stack *b);
 void	pa(t_stack *a, t_stack *b);
+void	pb(t_stack *a, t_stack *b);
+void	r(t_stack *stack);
+void	rr(t_stack *a, t_stack *b);
+void	revr(t_stack *stack);
+void	revrr(t_stack *a, t_stack *b);
 
-void	tempo_simple(t_stack *a, t_stack *b);
+int		bubble_sort(t_stack *a, t_stack *b);
 void	tempo_medium(t_stack *a, t_stack *b);
 void	tempo_complex(t_stack *a, t_stack *b);
 void	tempo_adaptive(t_stack *a, t_stack *b);

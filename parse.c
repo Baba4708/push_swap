@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbouvet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 15:15:59 by kbouvet           #+#    #+#             */
-/*   Updated: 2026/11/12 15:16:05 by kbouvet          ###   ########.fr       */
+/*   Updated: 2026/11/13 11:11:36 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	has_duplicate(t_stack *a)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < a->size)
@@ -33,7 +34,7 @@ static int	has_duplicate(t_stack *a)
 
 int	parse_input(int argc, char **argv, t_stack *a, t_config *config)
 {
-	int count;
+	int	count;
 
 	a->array = NULL;
 	a->size = 0;

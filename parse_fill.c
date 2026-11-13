@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   parse_fill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbouvet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 15:35:54 by kbouvet           #+#    #+#             */
-/*   Updated: 2026/11/12 15:35:55 by kbouvet          ###   ########.fr       */
+/*   Updated: 2026/11/13 11:17:50 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	put_word(char *arg, int *index, t_stack *a)
@@ -20,7 +21,7 @@ static int	put_word(char *arg, int *index, t_stack *a)
 	while (arg[*index] == ' ' || (arg[*index] >= 9 && arg[*index] <= 13))
 		(*index)++;
 	start = *index;
-	while (arg[*index] && arg[*index] != ' ' \
+	while (arg[*index] && arg[*index] != ' '\
 		&& !(arg[*index] >= 9 && arg[*index] <= 13))
 		(*index)++;
 	if (start == *index)

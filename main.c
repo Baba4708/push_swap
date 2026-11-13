@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbouvet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 14:40:54 by kbouvet           #+#    #+#             */
-/*   Updated: 2026/11/12 14:40:55 by kbouvet          ###   ########.fr       */
+/*   Updated: 2026/11/13 11:23:53 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	write_error(void)
@@ -27,13 +28,13 @@ void	free_stacks(t_stack *a, t_stack *b)
 static void	run_strategy(t_stack *a, t_stack *b, int strategy)
 {
 	if (strategy == SIMPLE)
-		tempo_simple(a, b);
-	else if (strategy == MEDIUM)
+		bubble_sort(a, b);
+	/*else if (strategy == MEDIUM)
 		tempo_medium(a, b);
 	else if (strategy == COMPLEX)
 		tempo_complex(a, b);
 	else
-		tempo_adaptive(a, b);
+		tempo_adaptive(a, b);*/
 }
 
 int	main(int argc, char **argv)

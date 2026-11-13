@@ -1,15 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pars_number.c                                      :+:      :+:    :+:   */
+/*   parse_number.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbouvet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 15:12:53 by kbouvet           #+#    #+#             */
-/*   Updated: 2026/11/12 15:12:55 by kbouvet          ###   ########.fr       */
+/*   Updated: 2026/11/13 11:20:04 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "push_swap.h"
 
 static int	is_digit(char c)
 {
@@ -20,9 +19,9 @@ static int	is_digit(char c)
 
 int	parse_number(char *str, int *value)
 {
-	long long number;
-	int sign;
-	int i;
+	long long	number;
+	int			sign;
+	int			i;
 
 	number = 0;
 	sign = 1;
