@@ -29,9 +29,9 @@ static void	run_strategy(t_stack *a, t_stack *b, int strategy)
 {
 	if (strategy == SIMPLE)
 		bubble_sort(a, b);
-	/*else if (strategy == MEDIUM)
-		tempo_medium(a, b);
-	else if (strategy == COMPLEX)
+	else if (strategy == MEDIUM)
+		bucket_sort(a, b);
+	/*else if (strategy == COMPLEX)
 		tempo_complex(a, b);
 	else
 		tempo_adaptive(a, b);*/

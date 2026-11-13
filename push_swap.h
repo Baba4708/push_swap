@@ -40,6 +40,9 @@ int		fill_stack(int argc, char **argv, t_stack *a, t_config *config);
 int		parse_number(char *str, int *value);
 int		is_option(char *arg);
 int		set_option(char *arg, t_config *config);
+int		bucket_min(t_stack *a);
+int		bucket_max(t_stack *a);
+int		bucket_max_index(t_stack *b);
 void	free_stacks(t_stack *a, t_stack *b);
 void	write_error(void);
 void	s(t_stack *stack);
@@ -50,9 +53,14 @@ void	r(t_stack *stack);
 void	rr(t_stack *a, t_stack *b);
 void	revr(t_stack *stack);
 void	revrr(t_stack *a, t_stack *b);
+void	tempo_pa(t_stack *a, t_stack *b);
+void	tempo_pb(t_stack *a, t_stack *b);
+void	tempo_ra(t_stack *a);
+void	tempo_rb(t_stack *b);
+void	tempo_rrb(t_stack *b);
 
 int		bubble_sort(t_stack *a, t_stack *b);
-void	tempo_medium(t_stack *a, t_stack *b);
+void	bucket_sort(t_stack *a, t_stack *b);
 void	tempo_complex(t_stack *a, t_stack *b);
 void	tempo_adaptive(t_stack *a, t_stack *b);
 

@@ -25,7 +25,10 @@ SOURCES = parse.c \
 	push.c \
 	rotate.c \
 	swap.c \
-	O_square.c
+	O_square.c \
+	bucket_op.c \
+	bucket_sort.c \
+	bucket_utils.c \
 
 OBJECTS = $(SOURCES:.c=.o)
 
