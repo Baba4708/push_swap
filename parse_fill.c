@@ -6,7 +6,7 @@
 /*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 15:35:54 by kbouvet           #+#    #+#             */
-/*   Updated: 2026/11/13 11:17:50 by bcaresme         ###   ########.fr       */
+/*   Updated: 2026/11/13 14:43:31 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	put_word(char *arg, int *index, t_stack *a)
 	while (arg[*index] == ' ' || (arg[*index] >= 9 && arg[*index] <= 13))
 		(*index)++;
 	start = *index;
-	while (arg[*index] && arg[*index] != ' '\
+	while (arg[*index] && arg[*index] != ' '
 		&& !(arg[*index] >= 9 && arg[*index] <= 13))
 		(*index)++;
 	if (start == *index)
