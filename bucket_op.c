@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   bucket_op.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbouvet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 14:34:30 by kbouvet           #+#    #+#             */
-/*   Updated: 2026/11/13 14:34:31 by kbouvet          ###   ########.fr       */
+/*   Updated: 2026/11/14 15:13:59 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	tempo_pa(t_stack *a, t_stack *b)
 {
 	if (b->size > 0)
 	{
-		pb(a, b);
+		pa(a, b);
 		write(1, "pa\n", 3);
 	}
 }
@@ -24,7 +25,7 @@ void	tempo_pb(t_stack *a, t_stack *b)
 {
 	if (a->size > 0)
 	{
-		pa(a, b);
+		pb(a, b);
 		write(1, "pb\n", 3);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 14:08:44 by bcaresme          #+#    #+#             */
-/*   Updated: 2026/11/12 14:48:17 by bcaresme         ###   ########.fr       */
+/*   Updated: 2026/11/14 15:10:49 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 void	pa(t_stack *a, t_stack *b)
 {
-	if (a->size < 1)
-		return ;
-	b->size += 1;
-	b->array[b->size - 1] = a->array[a->size - 1];
-	a->size -= 1;
-}
-
-void	pb(t_stack *a, t_stack *b)
-{
 	if (b->size < 1)
 		return ;
 	a->size += 1;
 	a->array[a->size - 1] = b->array[b->size - 1];
 	b->size -= 1;
+}
+
+void	pb(t_stack *a, t_stack *b)
+{
+	if (a->size < 1)
+		return ;
+	b->size += 1;
+	b->array[b->size - 1] = a->array[a->size - 1];
+	a->size -= 1;
 }
