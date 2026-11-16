@@ -19,12 +19,12 @@ void	r(t_stack *stack)
 
 	if (stack->size < 2)
 		return ;
-	i = 1;
-	while (i < stack->size - 1)
+	tmp = stack->array[stack->size - 1];
+	i = stack->size - 1;
+	while (i > 0)
 	{
-		tmp = stack->array[i];
 		stack->array[i] = stack->array[i - 1];
-		i++;
+		i--;
 	}
 	stack->array[0] = tmp;
 }
@@ -42,10 +42,10 @@ void	revr(t_stack *stack)
 
 	if (stack->size < 2)
 		return ;
-	i = stack->size - 2;
-	while (i < 0)
+	tmp = stack->array[0];
+	i = 0;
+	while (i < stack->size - 1)
 	{
-		tmp = stack->array[i];
 		stack->array[i] = stack->array[i + 1];
 		i++;
 	}
