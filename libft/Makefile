@@ -6,14 +6,14 @@
 #    By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/20 13:52:12 by bcaresme          #+#    #+#              #
-#    Updated: 2026/11/13 11:48:29 by bcaresme         ###   ########.fr        #
+#    Updated: 2026/11/16 16:12:30 by bcaresme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = libft.a
+NAME := libft.a
 
-SOURCES = ft_isalpha.c \
+SOURCES := ft_isalpha.c \
 	ft_isdigit.c \
 	ft_isalnum.c \
 	ft_isascii.c \
@@ -63,24 +63,31 @@ SOURCES = ft_isalpha.c \
 	ft_putstr_len.c \
 	ft_unsigned_putnbr_len.c
 
-OBJECTS = $(SOURCES:.c=.o)
+OBJ_DIR := obj/
 
-CFLAGS = -Wall -Wextra -Werror
+OBJECTS = $(addprefix $(OBJ_DIR), $(SOURCES:.c=.o))
+
+CFLAGS := -Wall -Wextra -Werror
 
 all : $(NAME)
 
-.c.o :
-	cc $(CFLAGS) -c $< -o $(<:.c=.o)
+$(OBJ_DIR)%.o : %.c
+	@cc $(CFLAGS) -c $< -o $@
 
-$(NAME) : $(OBJECTS)
-	ar rcs $(NAME) $(OBJECTS)
-	ranlib $(NAME)
+$(OBJ_DIR):
+	@mkdir $(OBJ_DIR)
+
+$(NAME) : $(OBJ_DIR) $(OBJECTS)
+	@ar rcs $(NAME) $(OBJECTS)
+	@ranlib $(NAME)
 
 clean :
-	rm -rf $(OBJECTS)
+	@rm -rf $(OBJECTS)
+	@echo "\033[31;1m$(NAME) objects cleaned\033[0m"
 
 fclean : clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
+	@echo "\033[31;1m$(NAME) cleaned\033[0m"
 
 re : fclean all
 

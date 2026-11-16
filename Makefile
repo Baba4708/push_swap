@@ -6,17 +6,17 @@
 #    By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/13 10:49:59 by bcaresme          #+#    #+#              #
-#    Updated: 2026/11/13 12:15:29 by bcaresme         ###   ########.fr        #
+#    Updated: 2026/11/16 16:12:07 by bcaresme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
+NAME := push_swap
 
-SUBDIR = libft/
+SUBDIR := libft/
 
-LIB = libft/libft.a
+LIB := libft/libft.a
 
-SOURCES = parse.c \
+SOURCES := parse.c \
 	parse_option.c \
 	parse_count.c \
 	parse_fill.c \
@@ -30,28 +30,49 @@ SOURCES = parse.c \
 	bucket_sort.c \
 	bucket_utils.c \
 
-OBJECTS = $(SOURCES:.c=.o)
+OBJ_DIR := obj/
 
-CFLAGS = -Wall -Wextra -Werror -g
+OBJECTS = $(addprefix $(OBJ_DIR), $(SOURCES:.c=.o))
 
-CC = cc
+CFLAGS := -Wall -Wextra -Werror -g
+
+CC := cc
+
+RM := rm -rf
 
 all : $(NAME)
 
-%.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJ_DIR)%.o : %.c
+	@echo "\033[34mCompiling $< -> $(notdir $@)\033[0m"
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(LIB) : $(SUBDIR)
-	make -C $<
+	@echo "\033[94;3mCompiling libft\033[0m"
+	@make -C $< --no-print-directory
 
-$(NAME) : $(OBJECTS) $(LIB)
-	$(CC) $(CFLAGS) $(OBJECTS) $(LIB) -o $(NAME)
+$(NAME) : $(LIB) $(OBJ_DIR) $(OBJECTS)
+	@echo "\033[92;1mLinking $@\033[0m"
+	@$(CC) $(CFLAGS) $(OBJECTS) $(LIB) -o $(NAME)
+
+$(OBJ_DIR):
+	@mkdir $(OBJ_DIR)
 
 clean :
-	rm -rf $(OBJECTS)
+ifdef LIBFT
+	@make clean -C $(SUBDIR) --no-print-directory
+else
+	@$(RM) $(OBJ_DIR)
+	@echo "\033[31;1m$(OBJ_DIR) cleaned\033[0m"
+endif
 
 fclean : clean
-	rm -rf $(NAME)
+ifdef LIBFT
+	@make clean -C $(SUBDIR) --no-print-directory
+	@echo "\033[31;1m$(notdir $(basename $(LIB))) cleaned\033[0m"
+else
+	@$(RM) $(NAME)
+	@echo "\033[31;1m$(NAME) cleaned\033[0m"
+endif
 
 re : fclean all
 
