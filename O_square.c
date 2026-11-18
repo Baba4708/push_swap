@@ -12,23 +12,25 @@
 
 #include "push_swap.h"
 
-static void	bubble_a_to_b(t_stack *a, t_stack *b, int *count)
+static void	bubble_a_to_b(t_stack *a, t_stack *b, int *count,
+		t_config *config)
 {
 	while (a->size)
 	{
 		pb(a, b);
-		ft_printf("pb\n");
+		bench_operation(config, OP_PB);
 		(*count)++;
 		if (b->size > 1 && b->array[b->size - 1] < b->array[b->size - 2])
 		{
 			s(b);
-			ft_printf("sb\n");
+			bench_operation(config, OP_SB);
 			(*count)++;
 		}
 	}
 }
 
-static int	bubble_b_to_a(t_stack *a, t_stack *b, int *count)
+static int	bubble_b_to_a(t_stack *a, t_stack *b, int *count,
+		t_config *config)
 {
 	int	did_swap;
 
@@ -36,12 +38,12 @@ static int	bubble_b_to_a(t_stack *a, t_stack *b, int *count)
 	while (b->size)
 	{
 		pa(a, b);
-		ft_printf("pa\n");
+		bench_operation(config, OP_PA);
 		(*count)++;
 		if (a->size > 1 && a->array[a->size - 1] > a->array[a->size - 2])
 		{
 			s(a);
-			ft_printf("sa\n");
+			bench_operation(config, OP_SA);
 			(*count)++;
 			did_swap = 1;
 		}
@@ -49,7 +51,7 @@ static int	bubble_b_to_a(t_stack *a, t_stack *b, int *count)
 	return (did_swap);
 }
 
-int	bubble_sort(t_stack *a, t_stack *b)
+int	bubble_sort(t_stack *a, t_stack *b, t_config *config)
 {
 	int	count;
 	int	did_swap;
@@ -58,8 +60,8 @@ int	bubble_sort(t_stack *a, t_stack *b)
 	did_swap = 1;
 	while (did_swap)
 	{
-		bubble_a_to_b(a, b, &count);
-		did_swap = bubble_b_to_a(a, b, &count);
+		bubble_a_to_b(a, b, &count, config);
+		did_swap = bubble_b_to_a(a, b, &count, config);
 	}
 	return (count);
 }

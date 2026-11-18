@@ -29,6 +29,8 @@ SOURCES := parse.c \
 	bucket_op.c \
 	bucket_sort.c \
 	bucket_utils.c \
+	bench.c \
+	bench_print.c \
 
 OBJ_DIR := obj/
 

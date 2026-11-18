@@ -40,6 +40,14 @@ int	parse_input(int argc, char **argv, t_stack *a, t_config *config)
 	a->size = 0;
 	config->strategy = ADAPTIVE;
 	config->bench = 0;
+	config->disorder = 0;
+	config->total_ops = 0;
+	count = 0;
+	while (count < 11)
+	{
+		config->counts[count] = 0;
+		count++;
+	}
 	if (!count_values(argc, argv, &count, config))
 		return (0);
 	a->array = malloc(sizeof(int) * count);

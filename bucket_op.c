@@ -12,47 +12,47 @@
 
 #include "push_swap.h"
 
-void	tempo_pa(t_stack *a, t_stack *b)
+void	tempo_pa(t_stack *a, t_stack *b, t_config *config)
 {
 	if (b->size > 0)
 	{
 		pa(a, b);
-		write(1, "pa\n", 3);
+		bench_operation(config, OP_PA);
 	}
 }
 
-void	tempo_pb(t_stack *a, t_stack *b)
+void	tempo_pb(t_stack *a, t_stack *b, t_config *config)
 {
 	if (a->size > 0)
 	{
 		pb(a, b);
-		write(1, "pb\n", 3);
+		bench_operation(config, OP_PB);
 	}
 }
 
-void	tempo_ra(t_stack *a)
+void	tempo_ra(t_stack *a, t_config *config)
 {
 	if (a->size > 1)
 	{
 		r(a);
-		write(1, "ra\n", 3);
+		bench_operation(config, OP_RA);
 	}
 }
 
-void	tempo_rb(t_stack *b)
+void	tempo_rb(t_stack *b, t_config *config)
 {
 	if (b->size > 1)
 	{
 		r(b);
-		write(1, "rb\n", 3);
+		bench_operation(config, OP_RB);
 	}
 }
 
-void	tempo_rrb(t_stack *b)
+void	tempo_rrb(t_stack *b, t_config *config)
 {
 	if (b->size > 1)
 	{
 		revr(b);
-		write(1, "rrb\n", 4);
+		bench_operation(config, OP_RRB);
 	}
 }

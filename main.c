@@ -25,12 +25,13 @@ void	free_stacks(t_stack *a, t_stack *b)
 		free(b->array);
 }
 
-static void	run_strategy(t_stack *a, t_stack *b, int strategy)
+static void	run_strategy(t_stack *a, t_stack *b, int strategy,
+		t_config *config)
 {
 	if (strategy == SIMPLE)
-		bubble_sort(a, b);
+		bubble_sort(a, b, config);
 	else if (strategy == MEDIUM)
-		bucket_sort(a, b);
+		bucket_sort(a, b, config);
 	/*else if (strategy == COMPLEX)
 		tempo_complex(a, b);
 	else
@@ -60,7 +61,10 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	b.size = 0;
-	run_strategy(&a, &b, config.strategy);
+	config.disorder = compute_disorder(&a);
+	run_strategy(&a, &b, config.strategy, &config);
+	if (config.bench)
+		print_bench(&config);
 	free_stacks(&a, &b);
 	return (0);
 }
