@@ -13,7 +13,7 @@
 
 static void	print_disorder(int disorder)
 {
-	char digit;
+	char	digit;
 
 	ft_putstr_fd("[bench] Disorder: ", 2);
 	ft_putnbr_fd(disorder / 100, 2);

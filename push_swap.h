@@ -32,6 +32,16 @@ typedef struct s_config
 	int	total_ops;
 }				t_config;
 
+typedef struct s_bucket
+{
+	int			min;
+	int			max;
+	int			count;
+	int			index;
+	long long	width;
+	long long	range[2];
+}			t_bucket;
+
 # define SIMPLE 1
 # define MEDIUM 2
 # define COMPLEX 3
@@ -79,7 +89,7 @@ void	bucket_sort(t_stack *a, t_stack *b, t_config *config);
 void	tempo_complex(t_stack *a, t_stack *b);
 void	tempo_adaptive(t_stack *a, t_stack *b);
 void	bench_operation(t_config *config, int operation);
-int	compute_disorder(t_stack *a);
+int		compute_disorder(t_stack *a);
 void	print_bench(t_config *config);
 
 #endif

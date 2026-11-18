@@ -21,8 +21,8 @@ static int	bucket_count(int size)
 	return (count);
 }
 
-static void	move_bucket(t_stack *a, t_stack *b, t_config *config, long long low,
-		long long high)
+static void	move_bucket(t_stack *a, t_stack *b, t_config *config,
+		t_bucket *bucket)
 {
 	int	i;
 	int	limit;
@@ -31,8 +31,8 @@ static void	move_bucket(t_stack *a, t_stack *b, t_config *config, long long low,
 	i = 0;
 	while (i < limit)
 	{
-		if ((long long)a->array[a->size - 1] >= low
-			&& (long long)a->array[a->size - 1] <= high)
+		if ((long long)a->array[a->size - 1] >= bucket->range[0]
+			&& (long long)a->array[a->size - 1] <= bucket->range[1])
 			tempo_pb(a, b, config);
 		else
 			tempo_ra(a, config);
@@ -63,24 +63,23 @@ static void	restore_stack(t_stack *a, t_stack *b, t_config *config)
 
 void	bucket_sort(t_stack *a, t_stack *b, t_config *config)
 {
-	int			min;
-	int			max;
-	int			count;
-	int			i;
-	long long	width;
+	t_bucket	bucket;
 
 	if (a->size < 2)
 		return ;
-	min = bucket_min(a);
-	max = bucket_max(a);
-	count = bucket_count(a->size);
-	width = ((long long)max - min + count) / count;
-	i = 0;
-	while (i < count && a->size > 0)
+	bucket.min = bucket_min(a);
+	bucket.max = bucket_max(a);
+	bucket.count = bucket_count(a->size);
+	bucket.width = ((long long)bucket.max - bucket.min
+			+ bucket.count) / bucket.count;
+	bucket.index = 0;
+	while (bucket.index < bucket.count && a->size > 0)
 	{
-		move_bucket(a, b, config, (long long)min + i * width,
-			(long long)min + (i + 1) * width - 1);
-		i++;
+		bucket.range[0] = (long long)bucket.min + bucket.index * bucket.width;
+		bucket.range[1] = (long long)bucket.min
+			+ (bucket.index + 1) * bucket.width - 1;
+		move_bucket(a, b, config, &bucket);
+		bucket.index++;
 	}
 	restore_stack(a, b, config);
 }

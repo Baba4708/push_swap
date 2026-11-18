@@ -12,11 +12,6 @@
 
 #include "push_swap.h"
 
-void	write_error(void)
-{
-	write(2, "Error\n", 6);
-}
-
 void	free_stacks(t_stack *a, t_stack *b)
 {
 	if (a->array)
@@ -32,10 +27,18 @@ static void	run_strategy(t_stack *a, t_stack *b, int strategy,
 		bubble_sort(a, b, config);
 	else if (strategy == MEDIUM)
 		bucket_sort(a, b, config);
-	/*else if (strategy == COMPLEX)
-		tempo_complex(a, b);
-	else
-		tempo_adaptive(a, b);*/
+}
+
+static int	prepare_stacks(int argc, char **argv, t_stack *a,
+		t_config *config)
+{
+	if (!parse_input(argc, argv, a, config))
+	{
+		write(2, "Error\n", 6);
+		free(a->array);
+		return (0);
+	}
+	return (1);
 }
 
 int	main(int argc, char **argv)
@@ -45,19 +48,14 @@ int	main(int argc, char **argv)
 	t_config	config;
 
 	a.array = NULL;
-	b.array = NULL;
 	if (argc == 1)
 		return (0);
-	if (!parse_input(argc, argv, &a, &config))
-	{
-		write_error();
-		free_stacks(&a, &b);
+	if (!prepare_stacks(argc, argv, &a, &config))
 		return (1);
-	}
 	b.array = malloc(sizeof(int) * a.size);
 	if (!b.array)
 	{
-		free_stacks(&a, &b);
+		free(a.array);
 		return (1);
 	}
 	b.size = 0;
