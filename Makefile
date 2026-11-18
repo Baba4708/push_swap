@@ -6,7 +6,7 @@
 #    By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/13 10:49:59 by bcaresme          #+#    #+#              #
-#    Updated: 2026/11/16 16:12:07 by bcaresme         ###   ########.fr        #
+#    Updated: 2026/11/18 15:41:52 by bcaresme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,7 @@ endif
 
 fclean : clean
 ifdef LIBFT
-	@make clean -C $(SUBDIR) --no-print-directory
+	@$(RM) $(LIB)
 	@echo "\033[31;1m$(notdir $(basename $(LIB))) cleaned\033[0m"
 else
 	@$(RM) $(NAME)

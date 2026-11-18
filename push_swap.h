@@ -6,7 +6,7 @@
 /*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 13:24:04 by bcaresme          #+#    #+#             */
-/*   Updated: 2026/11/13 12:01:13 by bcaresme         ###   ########.fr       */
+/*   Updated: 2026/11/18 16:21:04 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	tempo_ra(t_stack *a, t_config *config);
 void	tempo_rb(t_stack *b, t_config *config);
 void	tempo_rrb(t_stack *b, t_config *config);
 
-int		bubble_sort(t_stack *a, t_stack *b, t_config *config);
+void	bubble_sort(t_stack *a, t_config *config);
 void	bucket_sort(t_stack *a, t_stack *b, t_config *config);
 void	tempo_complex(t_stack *a, t_stack *b);
 void	tempo_adaptive(t_stack *a, t_stack *b);
