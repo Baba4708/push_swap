@@ -6,7 +6,7 @@
 #    By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/13 10:49:59 by bcaresme          #+#    #+#              #
-#    Updated: 2026/11/18 15:41:52 by bcaresme         ###   ########.fr        #
+#    Updated: 2026/11/20 16:10:39 by bcaresme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME := push_swap
 
 SUBDIR := libft/
 
-LIB := libft/libft.a
+LIB := $(addprefix $(SUBDIR), libft.a)
 
 SOURCES := parse.c \
 	parse_option.c \

@@ -6,7 +6,7 @@
 /*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 14:40:54 by kbouvet           #+#    #+#             */
-/*   Updated: 2026/11/18 16:20:13 by bcaresme         ###   ########.fr       */
+/*   Updated: 2026/11/20 12:07:32 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	run_strategy(t_stack *a, t_stack *b, int strategy,
 		t_config *config)
 {
 	if (strategy == SIMPLE)
-		bubble_sort(a, config);
+		insertion_sort(a, b, config);
 	else if (strategy == MEDIUM)
 		bucket_sort(a, b, config);
 }
