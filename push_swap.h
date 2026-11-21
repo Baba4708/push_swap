@@ -28,6 +28,7 @@ typedef struct s_config
 	int	strategy;
 	int	bench;
 	int	disorder;
+	int	adaptive_method;
 	int	counts[11];
 	int	total_ops;
 }				t_config;
@@ -86,8 +87,10 @@ void	tempo_rrb(t_stack *b, t_config *config);
 
 void	insertion_sort(t_stack *a, t_stack *b, t_config *config);
 void	bucket_sort(t_stack *a, t_stack *b, t_config *config);
-void	tempo_complex(t_stack *a, t_stack *b);
-void	tempo_adaptive(t_stack *a, t_stack *b);
+void	bucket_sort(t_stack *a, t_stack *b, t_config *config);
+int		radix_sort(t_stack *a, t_stack *b, t_config *config);
+int		adaptive_sort(t_stack *a, t_stack *b, t_config *config);
+int		compress_stack(t_stack *a);
 void	bench_operation(t_config *config, int operation);
 int		compute_disorder(t_stack *a);
 void	print_bench(t_config *config);

@@ -31,6 +31,9 @@ SOURCES := parse.c \
 	bucket_utils.c \
 	bench.c \
 	bench_print.c \
+	radix_sort.c \
+	radix_utils.c \
+	adaptive_sort.c \
 
 OBJ_DIR := obj/
 

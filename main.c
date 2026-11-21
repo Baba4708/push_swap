@@ -20,13 +20,18 @@ void	free_stacks(t_stack *a, t_stack *b)
 		free(b->array);
 }
 
-static void	run_strategy(t_stack *a, t_stack *b, int strategy,
+static int	run_strategy(t_stack *a, t_stack *b, int strategy,
 		t_config *config)
 {
 	if (strategy == SIMPLE)
 		insertion_sort(a, b, config);
 	else if (strategy == MEDIUM)
 		bucket_sort(a, b, config);
+	else if (strategy == COMPLEX)
+		return (radix_sort(a, b, config));
+	else if (strategy == ADAPTIVE)
+		return (adaptive_sort(a, b, config));
+	return (1);
 }
 
 static int	prepare_stacks(int argc, char **argv, t_stack *a,
@@ -60,7 +65,11 @@ int	main(int argc, char **argv)
 	}
 	b.size = 0;
 	config.disorder = compute_disorder(&a);
-	run_strategy(&a, &b, config.strategy, &config);
+	if (!run_strategy(&a, &b, config.strategy, &config))
+	{
+		free_stacks(&a, &b);
+		return (1);
+	}
 	if (config.bench)
 		print_bench(&config);
 	free_stacks(&a, &b);

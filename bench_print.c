@@ -25,17 +25,25 @@ static void	print_disorder(int disorder)
 	ft_putstr_fd("%\n", 2);
 }
 
-static void	print_strategy(int strategy)
+static void	print_strategy(t_config *config)
 {
 	ft_putstr_fd("[bench] Strategy: ", 2);
-	if (strategy == SIMPLE)
+	if (config->strategy == SIMPLE)
 		ft_putstr_fd("Simple (O(n^2))\n", 2);
-	else if (strategy == MEDIUM)
+	else if (config->strategy == MEDIUM)
 		ft_putstr_fd("Medium - Bucket Sort (O(n*sqrt(n)))\n", 2);
-	else if (strategy == COMPLEX)
-		ft_putstr_fd("Complex (O(n log n))\n", 2);
+	else if (config->strategy == COMPLEX)
+		ft_putstr_fd("Complex - Radix Sort (O(n log n))\n", 2);
 	else
-		ft_putstr_fd("Adaptive\n", 2);
+	{
+		ft_putstr_fd("Adaptive - ", 2);
+		if (config->adaptive_method == SIMPLE)
+			ft_putstr_fd("Bubble Sort (O(n^2))\n", 2);
+		else if (config->adaptive_method == MEDIUM)
+			ft_putstr_fd("Bucket Sort (O(n*sqrt(n)))\n", 2);
+		else
+			ft_putstr_fd("Radix LSD (O(n log n))\n", 2);
+	}
 }
 
 static void	print_count(char *name, int count)
@@ -50,7 +58,7 @@ static void	print_count(char *name, int count)
 void	print_bench(t_config *config)
 {
 	print_disorder(config->disorder);
-	print_strategy(config->strategy);
+	print_strategy(config);
 	print_count("Total operations", config->total_ops);
 	ft_putstr_fd("[bench] Operations breakdown:\n", 2);
 	print_count("sa", config->counts[OP_SA]);

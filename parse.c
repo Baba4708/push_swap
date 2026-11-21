@@ -41,6 +41,7 @@ int	parse_input(int argc, char **argv, t_stack *a, t_config *config)
 	config->strategy = ADAPTIVE;
 	config->bench = 0;
 	config->disorder = 0;
+	config->adaptive_method = 0;
 	config->total_ops = 0;
 	count = 0;
 	while (count < 11)
