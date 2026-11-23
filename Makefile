@@ -6,7 +6,7 @@
 #    By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/13 10:49:59 by bcaresme          #+#    #+#              #
-#    Updated: 2026/11/20 16:10:39 by bcaresme         ###   ########.fr        #
+#    Updated: 2026/11/23 16:06:01 by bcaresme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SOURCES := parse.c \
 	push.c \
 	rotate.c \
 	swap.c \
-	O_square.c \
+	insertion_sort.c \
 	bucket_op.c \
 	bucket_sort.c \
 	bucket_utils.c \
@@ -58,6 +58,7 @@ $(LIB) : $(SUBDIR)
 $(NAME) : $(LIB) $(OBJ_DIR) $(OBJECTS)
 	@echo "\033[92;1mLinking $@\033[0m"
 	@$(CC) $(CFLAGS) $(OBJECTS) $(LIB) -o $(NAME)
+	@echo -e '\033[1;93m     /\_/\  (\n    ( ^.^ ) _)\n      \"/  (\n    ( | | )\n   (__d b__)\n$(NAME) ready !\033[0m'
 
 $(OBJ_DIR):
 	@mkdir $(OBJ_DIR)

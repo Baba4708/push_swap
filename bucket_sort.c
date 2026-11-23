@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   bucket_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbouvet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 14:36:24 by kbouvet           #+#    #+#             */
-/*   Updated: 2026/11/13 14:36:26 by kbouvet          ###   ########.fr       */
+/*   Updated: 2026/11/23 11:38:51 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	bucket_count(int size)

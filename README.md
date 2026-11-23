@@ -39,17 +39,25 @@ Add one of the flags `--simple`, `--medium`, `--complex` or `--adaptive` to sele
 Add the flag `--bench` to activate the benchmark mode, showing the disorder of the starting pile, the strategy used and its complexity, the total number of operations and the count of each operation type.
 After your flags (or no flags), you have to add your starting stack, the first value being at the top of the stack.
 ## Resources :
-
+Use of AI to upgrade our understanding of some algorithm and help us find which one we wanted to use and for some debugging.
 
 
 
 
 ## Algorithms :
 - Insertion sort :
-	----------------------------------------------------------------------------------
+	The algorithm sorts a list by inserting the values of the not sorted part at their place in the sorted part, with a maximum of n<sup>2</sup> comparisons.
+	In push_swap's case, the sorted part is the b stack, so every values of a are inserted one by one at their place in b. To do that, the algorithm find the place and rotate the stack in the shortest way (using rb or rrb).
+	When all the values are in b, they are pushed back into a, sorted.
+	We chose this algorithm because we already used it on regular lists.
 - Bucket sort :
 	The bucket sort is an algorithm that allows you to sort numbers by distributing them into several groups called `buckets`.
 	In our program, we start by finding the minimum and the maximum values of the A pile. This creates several ranges of values.
 	Then, the numbers are sent to the buckets corresponding to their values. Once this distribution is complete, the 
 - Radix sort :
 	----------------------------------------------------------------------------------
+
+## Roles of the group's members :
+
+- bcaresme : stack manipulation's functions, simple algorithm (first a bubble sort, then the insertion sort), Makefile and code harmony.
+- kbouvet :

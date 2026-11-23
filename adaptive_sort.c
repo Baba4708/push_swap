@@ -9,6 +9,7 @@
 /*   Updated: 2026/11/20 16:00:00 by kbouvet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	adaptive_sort(t_stack *a, t_stack *b, t_config *config)

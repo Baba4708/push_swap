@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   radix_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbouvet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 14:00:00 by kbouvet           #+#    #+#             */
-/*   Updated: 2026/11/20 15:15:00 by kbouvet          ###   ########.fr       */
+/*   Updated: 2026/11/23 11:39:33 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	copy_values(t_stack *a, int *values)

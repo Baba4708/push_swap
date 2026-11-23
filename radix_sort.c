@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbouvet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 14:00:00 by kbouvet           #+#    #+#             */
-/*   Updated: 2026/11/20 14:00:00 by kbouvet          ###   ########.fr       */
+/*   Updated: 2026/11/23 15:49:59 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	get_bit_count(int size)

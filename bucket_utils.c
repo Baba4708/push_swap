@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   bucket_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbouvet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 14:39:03 by kbouvet           #+#    #+#             */
-/*   Updated: 2026/11/13 14:39:06 by kbouvet          ###   ########.fr       */
+/*   Updated: 2026/11/23 11:38:54 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	bucket_min(t_stack *a)

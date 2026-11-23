@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   bench_print.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbouvet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/17 16:20:00 by kbouvet           #+#    #+#             */
-/*   Updated: 2026/11/17 16:20:00 by kbouvet          ###   ########.fr       */
+/*   Updated: 2026/11/23 11:38:37 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	print_disorder(int disorder)
@@ -29,7 +30,7 @@ static void	print_strategy(t_config *config)
 {
 	ft_putstr_fd("[bench] Strategy: ", 2);
 	if (config->strategy == SIMPLE)
-		ft_putstr_fd("Simple (O(n^2))\n", 2);
+		ft_putstr_fd("Simple - Insertion Sort(O(n^2))\n", 2);
 	else if (config->strategy == MEDIUM)
 		ft_putstr_fd("Medium - Bucket Sort (O(n*sqrt(n)))\n", 2);
 	else if (config->strategy == COMPLEX)
@@ -38,7 +39,7 @@ static void	print_strategy(t_config *config)
 	{
 		ft_putstr_fd("Adaptive - ", 2);
 		if (config->adaptive_method == SIMPLE)
-			ft_putstr_fd("Bubble Sort (O(n^2))\n", 2);
+			ft_putstr_fd("Insertion Sort (O(n^2))\n", 2);
 		else if (config->adaptive_method == MEDIUM)
 			ft_putstr_fd("Bucket Sort (O(n*sqrt(n)))\n", 2);
 		else
