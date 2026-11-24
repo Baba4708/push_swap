@@ -50,14 +50,29 @@ Use of AI to upgrade our understanding of some algorithm and help us find which 
 	In push_swap's case, the sorted part is the b stack, so every values of a are inserted one by one at their place in b. To do that, the algorithm find the place and rotate the stack in the shortest way (using rb or rrb).
 	When all the values are in b, they are pushed back into a, sorted.
 	We chose this algorithm because we already used it on regular lists.
+	
 - Bucket sort :
 	The bucket sort is an algorithm that allows you to sort numbers by distributing them into several groups called `buckets`.
 	In our program, we start by finding the minimum and the maximum values of the A pile. This creates several ranges of values.
-	Then, the numbers are sent to the buckets corresponding to their values. Once this distribution is complete, the 
+	Then, the numbers are sent to the buckets corresponding to their values. Once this distribution is complete, the elements are recovered by putting them back in pile A in the right order.
+	The goal is to distribute the numbers to avoid having to sort them on by one with a slower algorithm.
+	
 - Radix sort :
-	----------------------------------------------------------------------------------
+	The Root Sort is an algorithm that sorts numbers by looking at their bits, that is, their binary representation.
+	
+	We use the LSD (Least Significant Digit) method. This means that sorting begins with the least important bit and gradually moves towards the largest bit.
+	
+	Before we begin, our program transforms numbers into indices. For example, the smallest number receives the 0 index, the next receives the index 1, and so on. This 
+	step also allows you to manage negative numbers.
+	
+	Then, for each bit, we look at its value:
+	- If the bit is 0, we send the number in stack B with pb.
+	
+	- If the bit is 1, it is left in stack A by performing ra.
+	
+	At the end of each passage, we put the elements of B back in A with pa. We start again until we have processed all the necessary bits.
 
 ## Roles of the group's members :
 
 - bcaresme : stack manipulation's functions, simple algorithm (first a bubble sort, then the insertion sort), Makefile and code harmony.
-- kbouvet :
+- kbouvet : main, parsing system, medium algorithm (bucket sort), complex algorithm (radix sort), adaptive algorithm and bench part.
