@@ -46,6 +46,18 @@ static int	prepare_stacks(int argc, char **argv, t_stack *a,
 	return (1);
 }
 
+static int	init_stack_b(t_stack *a, t_stack *b)
+{
+	b->array = malloc(sizeof(int) * a->size);
+	if (!b->array)
+	{
+		free(a->array);
+		return (0);
+	}
+	b->size = 0;
+	return (1);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack		a;
@@ -57,13 +69,8 @@ int	main(int argc, char **argv)
 		return (0);
 	if (!prepare_stacks(argc, argv, &a, &config))
 		return (1);
-	b.array = malloc(sizeof(int) * a.size);
-	if (!b.array)
-	{
-		free(a.array);
+	if (!init_stack_b(&a, &b))
 		return (1);
-	}
-	b.size = 0;
 	config.disorder = compute_disorder(&a);
 	if (!run_strategy(&a, &b, config.strategy, &config))
 	{
