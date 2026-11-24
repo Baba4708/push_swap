@@ -6,7 +6,7 @@
 /*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 10:12:41 by bcaresme          #+#    #+#             */
-/*   Updated: 2026/11/03 13:21:29 by bcaresme         ###   ########.fr       */
+/*   Updated: 2026/11/24 13:26:15 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int	ft_printf(const char *str, ...)
 	size_t	count;
 	va_list	args;
 
+	if (!str)
+		return (-1);
 	i = 0;
 	count = 0;
 	va_start(args, str);
