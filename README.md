@@ -39,11 +39,7 @@ Add one of the flags `--simple`, `--medium`, `--complex` or `--adaptive` to sele
 Add the flag `--bench` to activate the benchmark mode, showing the disorder of the starting pile, the strategy used and its complexity, the total number of operations and the count of each operation type.
 After your flags (or no flags), you have to add your starting stack, the first value being at the top of the stack.
 ## Resources :
-Use of AI to upgrade our understanding of some algorithm and help us find which one we wanted to use and for some debugging.
-
-
-
-
+Use of AI to upgrade our understanding of some algorithm and help us find which one we wanted to use, for some debugging, and some parts of the README.
 ## Algorithms :
 - Insertion sort :
 	The algorithm sorts a list by inserting the values of the not sorted part at their place in the sorted part, with a maximum of n<sup>2</sup> comparisons.
@@ -59,20 +55,22 @@ Use of AI to upgrade our understanding of some algorithm and help us find which 
 	
 - Radix sort :
 	The Root Sort is an algorithm that sorts numbers by looking at their bits, that is, their binary representation.
-	
 	We use the LSD (Least Significant Digit) method. This means that sorting begins with the least important bit and gradually moves towards the largest bit.
-	
 	Before we begin, our program transforms numbers into indices. For example, the smallest number receives the 0 index, the next receives the index 1, and so on. This 
 	step also allows you to manage negative numbers.
-	
 	Then, for each bit, we look at its value:
 	- If the bit is 0, we send the number in stack B with pb.
-	
 	- If the bit is 1, it is left in stack A by performing ra.
-	
 	At the end of each passage, we put the elements of B back in A with pa. We start again until we have processed all the necessary bits.
 
 ## Roles of the group's members :
 
-- bcaresme : stack manipulation's functions, simple algorithm (first a bubble sort, then the insertion sort), Makefile and code harmony.
+- bcaresme : stack manipulation's functions, simple algorithm (first a bubble sort, then the insertion sort), Makefile, code harmony and bonus.
 - kbouvet : main, parsing system, medium algorithm (bucket sort), complex algorithm (radix sort), adaptive algorithm and bench part.
+
+## Bonus :
+The bonus of this project is to make a checker to verify that the stack a is sorted and the stack b is empty after the execution of the program.
+For that, our algorithm use get_next_line to read the operations made by the algorithm and apply them on the stack that the user give to it. After all the instructions are made, the checker verifies the stacks.
+
+To compile this part of the project, use `make BONUS=1`. `BONUS=1` can be added to all the rules to target the bonus part.
+Run `./checker` to use it, and put the exact same list as the one you used to launch `./push_swap`. There is 2 modes to use the checker. You can launch it alone, in this case you have to write every operation by hand, separating them with `\n`, and finishing by pressing `ctrl + D`, or you can use it at the same time as `./push_swap` with a `|`, for example : `./push_swap 3 2 1 0 | ./checker 3 2 1 0`.
