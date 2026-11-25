@@ -6,7 +6,7 @@
 /*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 14:40:54 by kbouvet           #+#    #+#             */
-/*   Updated: 2026/11/23 13:51:11 by bcaresme         ###   ########.fr       */
+/*   Updated: 2026/11/25 17:02:22 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ void	free_stacks(t_stack *a, t_stack *b)
 static int	run_strategy(t_stack *a, t_stack *b, int strategy,
 		t_config *config)
 {
-	if (strategy == SIMPLE)
+	if (compute_disorder(a) == 0)
+		return (0);
+	else if (strategy == SIMPLE)
 		insertion_sort(a, b, config);
 	else if (strategy == MEDIUM)
 		bucket_sort(a, b, config);
