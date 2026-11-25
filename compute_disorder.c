@@ -1,21 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bonus_push_swap.h                                  :+:      :+:    :+:   */
+/*   compute_disorder.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/24 10:50:39 by bcaresme          #+#    #+#             */
-/*   Updated: 2026/11/24 11:12:32 by bcaresme         ###   ########.fr       */
+/*   Created: 2026/11/25 10:45:35 by bcaresme          #+#    #+#             */
+/*   Updated: 2026/11/25 10:45:59 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BONUS_PUSH_SWAP_H
-# define BONUS_PUSH_SWAP_H
+#include "push_swap_utils.h"
 
-# include "push_swap.h"
-# include "get_next_line.h"
+int	compute_disorder(t_stack *a)
+{
+	int	i;
+	int	j;
+	int	mistakes;
+	int	pairs;
 
-int	bonus_parse_input(int argc, char **argv, t_stack *a);
-
-#endif
+	i = 0;
+	mistakes = 0;
+	pairs = 0;
+	while (i < a->size)
+	{
+		j = i + 1;
+		while (j < a->size)
+		{
+			pairs++;
+			if (a->array[a->size - 1 - i] > a->array[a->size - 1 - j])
+				mistakes++;
+			j++;
+		}
+		i++;
+	}
+	if (pairs == 0)
+		return (0);
+	return (mistakes * 10000 / pairs);
+}

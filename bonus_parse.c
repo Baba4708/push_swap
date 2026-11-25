@@ -6,7 +6,7 @@
 /*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 10:55:18 by bcaresme          #+#    #+#             */
-/*   Updated: 2026/11/24 11:00:14 by bcaresme         ###   ########.fr       */
+/*   Updated: 2026/11/25 12:07:59 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	bonus_fill_stack(int argc, char **argv, t_stack *a)
 	i = 1;
 	while (i < argc)
 	{
-		if (!is_option(argv[i]) && !fill_arg(argv[i], a))
+		if (!fill_arg(argv[i], a))
 			return (0);
 		i++;
 	}

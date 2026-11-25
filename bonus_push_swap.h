@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   bonus_push_swap.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/24 11:06:39 by bcaresme          #+#    #+#             */
-/*   Updated: 2026/11/24 11:14:35 by bcaresme         ###   ########.fr       */
+/*   Created: 2026/11/24 10:50:39 by bcaresme          #+#    #+#             */
+/*   Updated: 2026/11/25 12:27:07 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus_push_swap.h"
+#ifndef BONUS_PUSH_SWAP_H
+# define BONUS_PUSH_SWAP_H
 
-int	checker(t_stack *a, t_stack *b)
-{
-	char	*instruct;
+# include "bonus_get_next_line.h"
+# include "push_swap_utils.h"
 
-	instruct = get_next_line(0);
-	while (instruct != NULL)
-	{
-		
-		instruct = get_next_line(0);
-	}
-	free(instruct);
-}
+int	bonus_parse_input(int argc, char **argv, t_stack *a);
+int	checker(t_stack *a, t_stack *b);
+
+#endif

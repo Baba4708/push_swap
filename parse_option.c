@@ -6,23 +6,11 @@
 /*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 15:30:51 by kbouvet           #+#    #+#             */
-/*   Updated: 2026/11/13 11:21:52 by bcaresme         ###   ########.fr       */
+/*   Updated: 2026/11/25 12:15:15 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static int	same_text(char *a, char *b)
-{
-	int	i;
-
-	i = 0;
-	while (a[i] && b[i] && a[i] == b[i])
-		i++;
-	if (a[i] == b[i])
-		return (1);
-	return (0);
-}
 
 int	set_option(char *arg, t_config *config)
 {

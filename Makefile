@@ -6,36 +6,58 @@
 #    By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/13 10:49:59 by bcaresme          #+#    #+#              #
-#    Updated: 2026/11/23 16:06:01 by bcaresme         ###   ########.fr        #
+#    Updated: 2026/11/25 12:19:46 by bcaresme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := push_swap
+ifndef BONUS
+	NAME := push_swap
+	OBJ_DIR := obj/
+else
+	NAME := checker
+	OBJ_DIR := bonus_obj/
+endif
 
 SUBDIR := libft/
 
 LIB := $(addprefix $(SUBDIR), libft.a)
 
-SOURCES := parse.c \
-	parse_option.c \
-	parse_count.c \
-	parse_fill.c \
-	parse_number.c \
-	main.c \
-	push.c \
+SOURCES = push.c \
 	rotate.c \
 	swap.c \
-	insertion_sort.c \
-	bucket_op.c \
-	bucket_sort.c \
-	bucket_utils.c \
-	bench.c \
-	bench_print.c \
-	radix_sort.c \
-	radix_utils.c \
-	adaptive_sort.c \
+	parse_number.c \
+	parse_utils.c \
+	compute_disorder.c
 
-OBJ_DIR := obj/
+INCLUDES = push_swap_utils.h
+
+ifndef BONUS
+	SOURCES += parse.c \
+		parse_option.c \
+		parse_count.c \
+		parse_fill.c \
+		main.c \
+		insertion_sort.c \
+		bucket_op.c \
+		bucket_sort.c \
+		bucket_utils.c \
+		bench.c \
+		bench_print.c \
+		radix_sort.c \
+		radix_utils.c \
+		adaptive_sort.c
+
+	INCLUDES += push_swap.h
+else
+	SOURCES += bonus_main.c \
+		bonus_parse.c \
+		bonus_checker.c \
+		bonus_get_next_line.c \
+		bonus_get_next_line_utils.c
+
+	INCLUDEs += bonus_push_swap.h \
+		bonus_get_next_line.h
+endif
 
 OBJECTS = $(addprefix $(OBJ_DIR), $(SOURCES:.c=.o))
 

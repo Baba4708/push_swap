@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   bonus_get_next_line.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 10:24:17 by bcaresme          #+#    #+#             */
-/*   Updated: 2026/11/24 11:08:14 by bcaresme         ###   ########.fr       */
+/*   Updated: 2026/11/25 12:27:53 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef BONUS_GET_NEXT_LINE_H
+# define BONUS_GET_NEXT_LINE_H
 # include <stdlib.h>
 # include <unistd.h>
 # include <stddef.h>

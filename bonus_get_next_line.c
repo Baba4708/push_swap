@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   bonus_get_next_line.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 10:21:21 by bcaresme          #+#    #+#             */
-/*   Updated: 2026/11/09 15:25:42 by bcaresme         ###   ########.fr       */
+/*   Updated: 2026/11/25 11:49:11 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "bonus_get_next_line.h"
 
 int	read_line(char **stash, int fd, int reading)
 {

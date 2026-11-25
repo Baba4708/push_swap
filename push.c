@@ -6,11 +6,11 @@
 /*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 14:08:44 by bcaresme          #+#    #+#             */
-/*   Updated: 2026/11/14 15:10:49 by bcaresme         ###   ########.fr       */
+/*   Updated: 2026/11/25 10:46:17 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_utils.h"
 
 void	pa(t_stack *a, t_stack *b)
 {

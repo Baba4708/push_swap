@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   bonus_get_next_line_utils.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 10:32:25 by bcaresme          #+#    #+#             */
-/*   Updated: 2026/11/24 11:08:24 by bcaresme         ###   ########.fr       */
+/*   Updated: 2026/11/25 11:49:07 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "bonus_get_next_line.h"
 
 void	split_buf(char *buf, int start)
 {
