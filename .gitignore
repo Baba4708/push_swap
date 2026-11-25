@@ -3,6 +3,6 @@
 *obj/
 *.a
 test*
-checker_linux
+checker*
 push_swap
 visualizer-push-swap/

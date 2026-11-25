@@ -6,7 +6,7 @@
 /*   By: bcaresme <bcaresme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/17 16:20:00 by kbouvet           #+#    #+#             */
-/*   Updated: 2026/11/25 10:45:43 by bcaresme         ###   ########.fr       */
+/*   Updated: 2026/11/25 14:07:14 by bcaresme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,3 @@ void	bench_operation(t_config *config, int operation)
 	config->counts[operation]++;
 	config->total_ops++;
 }
-
